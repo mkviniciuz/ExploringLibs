@@ -46,3 +46,20 @@ def proceduralTraining():
     print(f"Tipo de ataque: {ataque}")
 
 
+def gerar_mapa():
+
+    largura = int(input("Largura: "))
+    altura = int(input("Altura: "))
+
+    random.seed(input("Seed: "))
+
+    blocos = [".", "#", "~", "^"]
+
+    for alt in range(altura):
+        linha = ''
+        for lar in range(largura):
+            linha += random.choice(blocos)
+        print(linha)
+
+
+    
