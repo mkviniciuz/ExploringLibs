@@ -1,6 +1,5 @@
 import random
-import noise
-
+import math
 
 # CONCEITOS DE ALEATORIDADE CONTROLADA
 # UTILIZANDO SEED E DEFININDO PATTERNS
@@ -34,4 +33,16 @@ def nameGenerator():
     print("".join(name))
 
 
-    
+def proceduralTraining():
+    random.seed(input("Digite seu nome: "))
+
+    nome = random.choice(["Ogro das Sombras", "Cavaleiro Sombrio", "Turquesa Preta", "Tramoia"])
+    sufixo = random.choice(["da Tempestade", "da Sombras", "Infernal", "Cristalizado", "Sanguinario"])
+    forca = random.randint(5,20)
+    ataque = random.choice(["Veneno", "Fogo", "Gelo"])
+
+    print(f"Monstro gerado: {nome} {sufixo}")
+    print(f"Força: {forca}")
+    print(f"Tipo de ataque: {ataque}")
+
+
