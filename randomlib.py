@@ -61,5 +61,20 @@ def gerar_mapa():
             linha += random.choice(blocos)
         print(linha)
 
+def mapa_logica():
 
-    
+    largura = int(input("Largura: "))
+    altura = int(input("Altura: "))
+
+    random.seed(input("Seed: "))
+
+    caminho = random.randint(1, largura-1)
+
+    for alt in range(altura):
+        linha = ''
+        for lar in range(largura):
+            if lar == caminho:
+                linha += "."
+            else:
+                linha += "#"
+        print(linha)
