@@ -103,3 +103,36 @@ def mapa_curvo():
         caminho += direcao
 
         caminho = max(0, min(caminho, largura-1))
+
+def varios_caminhos():
+
+    largura = int(input("Largura: "))
+    altura = int(input("Altura: "))
+
+    random.seed(input("Seed: "))
+
+    def gerador_caminhos():
+        quantia_caminhos = int(input("Caminhos: "))
+        caminhos = []
+        for i in range(quantia_caminhos):
+            caminhos.append(random.randint(0, largura-1))
+
+        return caminhos
+    
+    caminhos = gerador_caminhos()
+
+    for alt in range(altura):
+        linha = ''
+        for lar in range(largura):
+            if lar in caminhos:
+                linha += "."
+            else:
+                linha +="#"
+        print(linha)
+
+        for i in range(len(caminhos)):
+            direcao = random.choice([-1, 0 , 1])
+
+            caminhos[i] += direcao
+
+            caminhos[i] = max(0, min(caminhos[i], largura-1))
