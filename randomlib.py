@@ -78,3 +78,28 @@ def mapa_logica():
             else:
                 linha += "#"
         print(linha)
+
+def mapa_curvo():
+    
+    largura = int(input("Largura: "))
+    altura = int(input("Altura: "))
+
+    random.seed(input("Seed: "))
+
+    caminho = random.randint(0, largura-1)
+
+    for alt in range(altura):
+        linha = ''
+        for lar in range(largura):
+            if lar == caminho:
+                linha += "."
+            else:
+                linha +="#"
+        print(linha)
+
+
+        direcao = random.choice([-1, 0 , 1])
+
+        caminho += direcao
+
+        caminho = max(0, min(caminho, largura-1))
